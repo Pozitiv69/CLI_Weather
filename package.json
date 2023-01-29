@@ -1,0 +1,23 @@
+{
+  "name": "cli_weather",
+  "version": "1.0.0",
+  "description": "CLI for get Weather",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pozitiv69/CLI_Weather.git"
+  },
+  "keywords": [
+    "CLI",
+    "Weather"
+  ],
+  "author": "Dmytro Cherkashyn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Pozitiv69/CLI_Weather/issues"
+  },
+  "homepage": "https://github.com/Pozitiv69/CLI_Weather#readme"
+}
