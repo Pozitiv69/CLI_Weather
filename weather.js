@@ -3,6 +3,8 @@ import { getArgs } from './helpers/args.js';
 import { printHelp, printError, printSuccess } from './services/log.service.js';
 import { saveKeyValue } from './services/storage.service.js';
 
+const API_KEY = '2ccea134a88513abd19549ea720e621f';
+
 const saveToken = async (token) => {
   try {
     await saveKeyValue('token', token);
