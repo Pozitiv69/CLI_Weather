@@ -1,13 +1,16 @@
 #!/usr/bin/env node
 import { getArgs } from './helpers/args.js';
+import { getWeather } from './services/api.service.js';
 import { printHelp, printError, printSuccess } from './services/log.service.js';
-import { saveKeyValue } from './services/storage.service.js';
-
-const API_KEY = '2ccea134a88513abd19549ea720e621f';
+import { saveKeyValue, DICTIONARY } from './services/storage.service.js';
 
 const saveToken = async (token) => {
+  if (!token.length) {
+    printError('Не передан токен');
+    return;
+  }
   try {
-    await saveKeyValue('token', token);
+    await saveKeyValue(DICTIONARY.token, token);
     printSuccess('Токен сохранен');
   } catch (error) {
     printError(error.message);
@@ -20,10 +23,10 @@ function initCLI() {
     printHelp();
   }
   if (args.s) {
-    // printC
   }
   if (args.t) {
     saveToken(args.t);
   }
+  getWeather('vinnytsia');
 }
 initCLI();
