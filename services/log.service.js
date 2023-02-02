@@ -14,11 +14,23 @@ const printHelp = () => {
     dedent`
     ${chalk.bgCyan('HELP')}
     Без параметров - вывод погоды
-    -s [CITY] для установки города
+    -c [CITY] для установки города
     -h для вывода помощи
     -t [API_KEY] для сохранения токена
     `
   );
 };
 
-export { printError, printSuccess, printHelp };
+const printWeather = (res, icon) => {
+  console.log(
+    dedent`
+    ${chalk.bgGreenBright('WEATHER')}
+    Погода в городе: ${res.name} ${res.weather[0].description} ${icon}  
+    Температура: ${res.main.temp} (ощущается как ${res.main.feels_like})
+    Влажность: ${res.main.humidity}%
+    Скорость ветра: ${res.wind.speed}
+    `
+  );
+};
+
+export { printError, printSuccess, printHelp, printWeather };
